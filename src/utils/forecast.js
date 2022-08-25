@@ -1,4 +1,4 @@
-const request = require('request');
+const request = require("request");
 //
 // Goal: Create a reusable function for getting the forecast
 //
@@ -14,18 +14,19 @@ const forecast = (latitude, longtitude, callback) => {
 
   request({ url: URL, json: true }, (error, { body }) => {
     if (error) {
-      callback('Unable to connect to location services!', undefined);
+      callback("Unable to connect to location services!", undefined);
     } else if (body.error) {
-      callback('Unable to find Location. Try another search.', undefined);
+      callback("Unable to find Location. Try another search.", undefined);
     } else {
       const weatherDescriptions = body.current.weather_descriptions[0];
       const temperature = body.current.temperature;
       const feelsLike = body.current.feelslike;
+      const humidity = body.current.humidity;
       callback(
         undefined,
         // `${weatherDescriptions}: It is ${temperature} degress out. it feels like ${feelsLike} degress out.`
         {
-          message: `${weatherDescriptions}: It is ${temperature} degress out. it feels like ${feelsLike} degress out.`,
+          message: `The weather is ${weatherDescriptions}. It is ${temperature} degress out. it feels like ${feelsLike} degress out with a humidity of ${humidity}%.`,
         }
       );
     }

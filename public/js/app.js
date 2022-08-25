@@ -38,8 +38,8 @@ weatherForm.addEventListener("submit", (event) => {
         return (messageOne.textContent = `ERROR: ${address.error}`);
       }
 
-      messageOne.textContent = `LOCATION: ${address.location}`;
-      messageTwo.textContent = `FORECAST: ${address.forecast}`;
+      messageOne.textContent = `Your Location: ${address.location}`;
+      messageTwo.textContent = `${address.forecast}`;
       console.log(address.location);
       console.log(address.forecast);
     });
