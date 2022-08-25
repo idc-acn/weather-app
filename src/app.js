@@ -23,22 +23,23 @@ app.use(express.static(path.join(__dirname, "../public")));
 app.get("", (req, res) => {
   res.render("index", {
     title: "Weather App",
-    name: "Ivan",
+    name: "Ivan Cubinar",
   });
 });
 
 app.get("/help", (req, res) => {
   res.render("help", {
     title: "Help Page",
-    helpText: "Example help",
-    name: "Ivan",
+    helpText:
+      "How to use the App: Just input any location and click search button.",
+    name: "Ivan Cubinar",
   });
 });
 
 app.get("/about", (req, res) => {
   res.render("about", {
     title: "About Page",
-    name: "Ivan",
+    name: "Ivan Cubinar",
   });
 });
 
@@ -85,7 +86,7 @@ app.get("/products", (req, res) => {
 app.get("/help/*", (req, res) => {
   res.render("404", {
     title: "404 Page",
-    name: "Ivan",
+    name: "Ivan Cubinar",
     errorText: "Help article not found",
   });
 });
@@ -93,7 +94,7 @@ app.get("/help/*", (req, res) => {
 app.get("*", (req, res) => {
   res.render("404", {
     title: "404 Page",
-    name: "Ivan",
+    name: "Ivan Cubinar",
     errorText: "Page not found",
   });
 });
